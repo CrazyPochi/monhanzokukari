@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>MHWilds 素材DB</title>
+    <title>MHWilds 属素早見表</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;700;800&display=swap" rel="stylesheet">
@@ -32,7 +32,7 @@
             color: var(--text-main);
         }
 
-        /* ▼▼▼ 背景画像の調整 ▼▼▼ */
+        
         .bg-layer {
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
@@ -40,12 +40,12 @@
             background-image: url('背景.png');
             background-repeat: no-repeat;
             
-            /* PC: カバー表示 */
+            
             background-size: cover;
             background-position: center;
         }
 
-        /* --- メインエリア (左側 / スマホは上側) --- */
+        
         .main-content {
             flex: 1;
             padding: 20px;
@@ -69,7 +69,7 @@
         }
         .container.show { display: block; }
 
-        /* ヘッダー情報 */
+        
         .info-header {
             padding: 15px 20px;
             background: linear-gradient(to right, #3e3a34, #2a2a2a);
@@ -97,7 +97,7 @@
             text-shadow: 2px 2px 4px #000;
         }
 
-        /* 弱点テーブル */
+        
         .weakness-area {
             padding: 10px;
             border-bottom: 1px solid var(--border);
@@ -122,7 +122,7 @@
         .col-ice { color: #74b9ff; }
         .col-dragon { color: #8e44ad; }
 
-        /* タブ */
+        
         .tabs {
             display: flex;
             background: #222;
@@ -146,7 +146,7 @@
             background: #3a3a3a;
         }
 
-        /* 画像表示エリア */
+        
         .image-viewer {
             padding: 10px;
             min-height: 250px;
@@ -178,7 +178,7 @@
             background: rgba(0,0,0,0.5);
         }
 
-        /* --- サイドバー (右側 / スマホは下側) --- */
+        
         .sidebar {
             width: 320px;
             background-color: rgba(30, 30, 30, 0.95);
@@ -250,17 +250,17 @@
             flex-shrink: 0;
         }
 
-        /* ▼▼▼ スマホ専用レイアウト調整 ▼▼▼ */
+        
         @media (max-width: 768px) {
             body { 
                 flex-direction: column; 
             }
 
-            /* ▼▼▼ スマホでの背景画像位置調整 ▼▼▼ */
+            
             .bg-layer {
-                /* 背景画像の位置を中央に強制 */
+                
                 background-position: center center !important; 
-                /* ロゴが切れないようにサイズ調整（containだと余白が出るのでcoverのまま位置調整で対応） */
+                
                 background-size: cover !important;
             }
             
@@ -287,7 +287,7 @@
             #placeholder {
                 padding: 20px;
                 font-size: 0.9em;
-                /* スマホで文字が見やすいように背景を少し暗くする */
+                
                 background-color: rgba(0,0,0,0.4);
                 border-radius: 8px;
                 margin: 20px;
@@ -302,7 +302,7 @@
     <div class="main-content">
         <div id="placeholder">
             <h3>下のリストから選択してください</h3>
-            <p style="font-size:0.8em; color:#ddd;">画像フォルダ構成:<br>images/モンスター名.png<br>images/mats/モンスター名_下位.png</p>
+            <p style="font-size:0.8em; color:#ddd;">
         </div>
         
         <div class="container" id="detailContainer">
@@ -335,7 +335,7 @@
                 
                 <div id="msg-no-img" class="no-image-msg">
                     <span style="font-weight:bold; font-size:1.1em; color:#e74c3c;">画像が見つかりません</span><br><br>
-                    以下のファイル名で保存してください：<br>
+                    
                     <span id="missing-filename" style="color:#d4af37; font-weight:bold; display:block; margin-top:5px; word-break:break-all;"></span>
                 </div>
             </div>
@@ -355,13 +355,13 @@
         const database = [
             { name: "チャタカブラ", e: ["✕", "✕", "◎", "△", "✕"] },
             { name: "ケマトリス", e: ["✕", "◯", "✕", "✕", "✕"] },
-            { name: "ララ・バシナ", e: ["◯", "✕", "✕", "✕", "✕"] },
+            { name: "ラバラ・バリナ", e: ["◯", "✕", "✕", "✕", "✕"] },
             { name: "ババコンガ", e: ["◯", "✕", "✕", "◯", "✕"] },
             { name: "バーラハーラ", e: ["✕", "✕", "◯", "✕", "✕"] },
             { name: "ドシャグマ", e: ["◯", "✕", "△", "✕", "✕"] },
             { name: "ウズ・トゥナ", e: ["✕", "✕", "◯", "✕", "✕"] },
             { name: "ププロポル", e: ["✕", "◯", "✕", "✕", "✕"] },
-            { name: "煌雷竜 レ・ダウ", e: ["✕", "△", "✕", "◯", "✕"] },
+            { name: "レ・ダウ", e: ["✕", "△", "✕", "◯", "✕"] },
             { name: "ネルスキュラ", e: ["◯", "✕", "✕", "✕", "✕"] },
             { name: "ヒラバミ", e: ["◎", "✕", "◯", "✕", "✕"] },
             { name: "アジャラカン", e: ["✕", "◎", "✕", "△", "✕"] },
@@ -384,7 +384,8 @@
             { name: "タマミツネ", e: ["✕", "✕", "◯", "△", "◯"] },
             { name: "ラギアクルス", e: ["◯", "✕", "✕", "✕", "✕"] },
             { name: "セルレギオス", e: ["✕", "✕", "◯", "△", "✕"] },
-            { name: "オメガプラネテス", e: ["✕", "△", "◎", "△", "◯"] }
+            { name: "オメガプラネテス", e: ["✕", "△", "◎", "△", "◯"] },
+            { name: "ゴグマジオス", e: ["◯", "✕", "✕", "✕", "◯"] }
         ];
 
         const colors = ["col-fire", "col-water", "col-thunder", "col-ice", "col-dragon"];
