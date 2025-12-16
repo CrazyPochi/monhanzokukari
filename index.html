@@ -34,20 +34,21 @@
             color: var(--text-main);
         }
 
-        /* 背景用レイヤー */
+        /* ▼▼▼ 背景画像を固定するための専用レイヤー ▼▼▼ */
         .bg-layer {
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
             z-index: -1;
             background-image: url('背景.png');
-            background-repeat: no-repeat;
             background-size: cover;
             background-position: center;
+            background-repeat: no-repeat;
         }
 
-        /* --- メインエリア (PC:左) --- */
+        /* --- メインエリア (PC:左 / スマホ:上) --- */
         .main-content {
             flex: 1;
+            /* 背景はレイヤーにあるので透明に */
             background: transparent;
             padding: 20px;
             display: flex;
@@ -276,10 +277,11 @@
         /* ▼▼▼ スマホ専用レイアウト調整 ▼▼▼ */
         @media (max-width: 768px) {
             body { 
-                flex-direction: column-reverse; /* リストを下に */
+                flex-direction: column; /* 縦並び (上:メイン, 下:リスト) */
             }
 
             .bg-layer {
+                /* スマホでは背景の中央を表示 */
                 background-position: center center !important;
                 background-size: cover !important; 
             }
@@ -289,7 +291,7 @@
                 height: 60%; 
                 padding: 10px;
                 width: 100%;
-                order: 1;
+                order: 1; /* 上に配置 */
             }
 
             .sidebar { 
@@ -297,7 +299,7 @@
                 height: 40%; 
                 border-left: none; 
                 border-top: 1px solid var(--border);
-                order: 2;
+                order: 2; /* 下に配置 */
             }
 
             /* リストを閉じた状態（詳細最大化） */
